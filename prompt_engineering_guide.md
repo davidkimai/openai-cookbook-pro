@@ -6,7 +6,6 @@ This reference guide consolidates OpenAI’s latest findings and recommendations
 
 This document emphasizes concrete prompt patterns, scaffolding techniques, and deployment-tested prompt modularity.
 
----
 
 ## Key Prompting Concepts
 
@@ -40,7 +39,6 @@ Use GPT-4.1’s enhanced persistence and tool adherence by specifying three type
 
 These drastically increase the model’s task completion rate when integrated at the top of a system prompt.
 
----
 
 ## Prompt Structure Blueprint
 
@@ -72,7 +70,6 @@ Demonstrates expected input/output behavior
 
 This format increases predictability and flexibility during live prompt debugging and iteration.
 
----
 
 ## Long-Context Prompting
 
@@ -98,7 +95,6 @@ GPT-4.1 supports up to **1M token inputs**, enabling:
 | Title/ID | Multi-document input structuring     |
 | JSON     | Code/tool tasks only; avoid for text |
 
----
 
 ## Tool-Calling Integration
 
@@ -142,7 +138,6 @@ Define tools in the OpenAI `tools` field, not inline. Provide:
 | Over-calling tools | Add reasoning delay + post-call reflection  |
 | Missed call        | Add output format block and trigger keyword |
 
----
 
 ## Instruction Following Optimization
 
@@ -176,7 +171,6 @@ Use numbered sequences to enforce step-by-step logic.
 4. Respond
 ```
 
----
 
 ## Chain-of-Thought Prompting (CoT)
 
@@ -204,7 +198,6 @@ Let’s think through this. First, identify what the question is asking. Then ex
 Think step by step using the strategy above.
 ```
 
----
 
 ## Failure Modes and Fixes
 
@@ -215,7 +208,6 @@ Think step by step using the strategy above.
 | Verbose repetition | Add paraphrasing constraint and variation list                 |
 | Overcompliance     | If model follows a sample phrase verbatim, instruct to vary it |
 
----
 
 ## Evaluation Strategy
 
@@ -233,7 +225,6 @@ Prompt effectiveness should be evaluated across:
 * Log errors and model divergence cases
 * Use eval tags (`# Eval:`) in prompt for meta-analysis
 
----
 
 ## Delimiter Comparison Table
 
@@ -248,7 +239,6 @@ Prompt effectiveness should be evaluated across:
 
 Use Markdown or XML for general structure; JSON for code/tools only.
 
----
 
 ## Example: Prompt Debugging Workflow
 
@@ -281,7 +271,6 @@ Summarize each trial based on outcome clarity and trial scale.
 
 Ensure model adheres to output format, logic, and reasoning instructions.
 
----
 
 ## Summary: Prompt Engineering Heuristics
 
@@ -294,7 +283,6 @@ Ensure model adheres to output format, logic, and reasoning instructions.
 | Reflection Reminders       | Long context, debugging, validation |
 | Dual Instruction Placement | Long documents (>100K tokens)       |
 
----
 
 ## Final Notes
 
