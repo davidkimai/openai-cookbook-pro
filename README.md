@@ -1,4 +1,4 @@
-# OpenAI Cookbook Pro
+# [OpenAI Cookbook Pro](https://chatgpt.com/canvas/shared/6825e9f6e8d88191bf9ef4de00b29b0f)
 
 **An Advanced Implementation Guide to GPT-4.1: Real-World Applications, Prompting Strategies, and Agent Workflows**
 
