@@ -13,7 +13,6 @@ This guide outlines best practices, real-world examples, and design patterns to 
 
 This file is designed to stand alone for practical use and is fully aligned with the broader `openai-cookbook-pro` repository.
 
----
 
 ## Why Instruction-Following Matters
 
@@ -26,7 +25,6 @@ Instruction following is central to:
 
 With GPT-4.1’s shift toward literal interpretation, instruction scaffolding becomes the primary control interface.
 
----
 
 ## GPT-4.1 Instruction Characteristics
 
@@ -65,7 +63,6 @@ GPT-4.1 performs better with clearly formatted instructions. Prefer structured f
 
 Poorly formatted, unsegmented prompts lead to instruction bleed and undesired merging of behaviors.
 
----
 
 ## Recommended Prompt Structure
 
@@ -104,7 +101,6 @@ You are a customer service assistant. Your job is to resolve user issues efficie
 Do not rely on prior knowledge. Use provided tools and context only.
 ```
 
----
 
 ## Instruction Categories
 
@@ -139,7 +135,6 @@ Models often hallucinate tools unless guided:
 * “If you don’t have enough information to use a tool, ask the user for more.”
 * “Always confirm tool usage before responding.”
 
----
 
 ## Debugging Instruction Failures
 
@@ -160,7 +155,6 @@ Instruction-following failures often stem from the following:
 4. Break complex rules into atomic steps
 5. Test with structured evals
 
----
 
 ## Instruction Layering: The 3-Tier Model
 
@@ -174,7 +168,6 @@ When designing prompts for multi-step tasks, layer your instructions in tiers:
 
 Each layer helps disambiguate behavior and provides a fallback structure if downstream instructions fail.
 
----
 
 ## Long Context Instruction Handling
 
@@ -186,7 +179,6 @@ In prompts exceeding 50,000 tokens:
 
 GPT-4.1 is trained to respect these placements, especially when consistent structure is maintained.
 
----
 
 ## Literal vs. Flexible Models
 
@@ -199,7 +191,6 @@ GPT-4.1 is trained to respect these placements, especially when consistent struc
 
 GPT-4.1 performs better **when prompts are precise**. Treat prompt engineering as API design — clear, testable, and version-controlled.
 
----
 
 ## Tips for Designing Instruction-Sensitive Prompts
 
@@ -218,7 +209,6 @@ GPT-4.1 performs better **when prompts are precise**. Treat prompt engineering a
 * Rely on invisible or implied rules
 * Assume formatting styles (e.g., bullets) are optional
 
----
 
 ## Example: Instruction-Controlled Code Agent
 
@@ -244,7 +234,6 @@ Do not guess. If you are unsure, use tools or ask.
 
 > For a complete walkthrough, see `/examples/code-agent-instructions.md`
 
----
 
 ## Instruction Evolution Across Iterations
 
@@ -263,7 +252,6 @@ Example diff:
 
 Maintain a changelog for prompts as you would with source code. This ensures instructional integrity during collaborative development.
 
----
 
 ## Testing and Evaluation
 
@@ -281,7 +269,6 @@ Example matrix:
 | Use tools first      | ✅             | ✅             |
 | Avoid sensitive data | ❌             | ✅             |
 
----
 
 ## Final Reminders
 
@@ -294,7 +281,6 @@ GPT-4.1 is exceptionally effective **when paired with well-structured, comprehen
 
 Every prompt is a contract. GPT-4.1 honors that contract, but only if written clearly.
 
----
 
 ## See Also
 
@@ -303,6 +289,5 @@ Every prompt is a contract. GPT-4.1 honors that contract, but only if written cl
 * [`Long Context Strategies`](../examples/long-context-formatting.md)
 * [`OpenAI 4.1 Prompting Guide`](https://platform.openai.com/docs/guides/prompting)
 
----
 
 For questions, suggestions, or prompt design contributions, submit a pull request to `/examples/instruction-following.md` or open an issue in the main repo.
