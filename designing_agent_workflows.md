@@ -8,7 +8,6 @@ This guide provides a comprehensive framework for designing effective agent work
 
 Each section can be reused as a design module for your own applications, while contributing to the broader library of effective agent patterns.
 
----
 
 ## What Is an Agent Workflow?
 
@@ -22,7 +21,6 @@ An agent workflow is a sequence of steps managed by the model in which it:
 
 This process transforms GPT-4.1 from a turn-based assistant into a semi-autonomous task manager.
 
----
 
 ## Key Model Behaviors That Enable Agent Design
 
@@ -42,7 +40,6 @@ Though not a reasoning-first model, GPT-4.1 can be prompted to externalize plans
 
 The `tools` parameter in the API allows for direct invocation of functional calls (file inspection, patch application, database lookups, etc.) — making agentic behavior verifiable and extendable.
 
----
 
 ## Core Agent Workflow Template
 
@@ -76,7 +73,6 @@ Summarize the solution, include test results if applicable.
 
 This format primes GPT-4.1 for proactive execution, tool integration, and termination control.
 
----
 
 ## Task Archetypes: Common Agent Patterns
 
@@ -87,7 +83,6 @@ This format primes GPT-4.1 for proactive execution, tool integration, and termin
 | **Support Agent**        | Answers factual queries with context validation and escalation support | Include step-by-step message plan and constraints   |
 | **Document Synth Agent** | Parses, filters, and summarizes from long context                      | Use instructions at top and bottom of prompt        |
 
----
 
 ## Designing for Persistence
 
@@ -102,7 +97,6 @@ Check that all steps are verified. Repeat steps as needed. Only stop when all te
 
 Reinforce this message early and late in the prompt. In tests, models were 19% more likely to complete complex multi-step tasks when given persistent execution reminders.
 
----
 
 ## Designing for Tool Use
 
@@ -137,7 +131,6 @@ If you do not have enough context to proceed, pause and use the tools provided.
 Do not guess about code, structure, or missing data. Always verify by tool.
 ```
 
----
 
 ## Planning and Reflection Prompts
 
@@ -164,7 +157,6 @@ After taking an action:
 
 These templates increase accuracy in multi-step execution by enforcing self-monitoring.
 
----
 
 ## Full Agent Walkthrough: SWE-bench Example
 
@@ -225,7 +217,6 @@ Step 6: Re-ran tests – all passed
 Task complete. Final patch validated.
 ```
 
----
 
 ## Failure Modes and Mitigations
 
@@ -236,7 +227,6 @@ Task complete. Final patch validated.
 | No Planning or Reflection      | Skips step-by-step reasoning          | Add planning and reflection anchors          |
 | Ignoring Final Validation Step | Says task complete before verifying   | Add final verification checklist to prompt   |
 
----
 
 ## Output Format Suggestions
 
@@ -258,7 +248,6 @@ A consistent output format improves interpretability and downstream usage.
 
 You can train GPT-4.1 to adopt consistent internal status reporting with a format guide provided in each system prompt.
 
----
 
 ## Escalation, Recovery, and Termination
 
@@ -291,7 +280,6 @@ Only end your session when:
 - You have summarized your actions for the user
 ```
 
----
 
 ## Behavioral Design Tips
 
@@ -302,7 +290,6 @@ Only end your session when:
 | Named sections (Markdown/XML) | Improves adherence to plan and formatting           |
 | Soft conditionals             | Encourages resilience (“If X fails, try Y…”)        |
 
----
 
 ## Designing for Developer Control
 
@@ -322,7 +309,6 @@ AGENT_TEMPLATE = f"""
 
 Use this model to power dashboards, agent templates, and UI-driven behavior controls.
 
----
 
 ## Testing Agent Workflows
 
@@ -339,7 +325,6 @@ Key metrics:
 * Tool error frequency
 * Response length and structure fidelity
 
----
 
 ## Summary
 
@@ -354,7 +339,6 @@ Follow these principles:
 
 By shaping agent workflows as formal task managers, developers can build systems that reliably complete complex operations in a safe, verifiable manner.
 
----
 
 ## Next Steps
 
@@ -366,6 +350,5 @@ Explore these additional modules to expand your agent capabilities:
 
 For more agent-ready templates, visit the `/agent_design/` directory in the main repository.
 
----
 
 For contributions or questions, open an issue or submit a pull request to `/agent_design/Designing Agent Workflows.md`.
