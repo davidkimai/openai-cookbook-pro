@@ -1,4 +1,6 @@
 # [OpenAI Cookbook Pro](https://chatgpt.com/canvas/shared/6825e9f6e8d88191bf9ef4de00b29b0f)
+### Delimiters Tools: [Universal Runtime](https://github.com/davidkimai/universal-runtime) | [Universal Developer](https://github.com/davidkimai/universal-runtime)
+
 **An Advanced Implementation Guide to GPT-4.1: Real-World Applications, Prompting Strategies, and Agent Workflows**
 
 Welcome to **OpenAI Cookbook Pro** — a comprehensive, practical, and fully extensible resource tailored for engineers, developers, and researchers working with the GPT-4.1 API and related OpenAI tools. This repository distills best practices, integrates field-tested strategies, and supports high-performing workflows with enhanced reliability, precision, and developer autonomy.
