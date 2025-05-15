@@ -6,7 +6,7 @@ This guide provides detailed, real-world examples of using the OpenAI GPT-4.1 AP
 
 Each example illustrates system prompt construction, tool schema definitions, interaction workflows, and failure mitigation strategies.
 
----
+
 
 ## Example 1: Customer Support Agent with Tool Use
 
@@ -84,7 +84,7 @@ You're asking about international service while traveling to France. Let me chec
 }
 ```
 
----
+
 
 ## Example 2: Software Bug Fix Agent with Diff Application
 
@@ -152,7 +152,7 @@ EOF
 }
 ```
 
----
+
 
 ## Example 3: Long-Context Document Analyzer
 
@@ -189,7 +189,7 @@ Summarize and extract insights from up to 1M tokens of context.
 * After each, provide a summary and document scores
 * Compile findings at end
 
----
+
 
 ## Example 4: Data Labeling Assistant
 
@@ -236,7 +236,7 @@ Assist with structured classification tasks.
 ]
 ```
 
----
+
 
 ## Example 5: Chain-of-Thought for Multi-Hop Reasoning
 
@@ -277,7 +277,7 @@ Step 3: 2022 had flat rates, 2023 added time-of-use billing
 Answer: Billing policy changed to time-based pricing in 2023.
 ```
 
----
+
 
 ## General Prompt Formatting Guidelines
 
@@ -304,7 +304,7 @@ Answer: Billing policy changed to time-based pricing in 2023.
 * Cite source documents if used
 * Include fallback responses if uncertain (e.g., "Insufficient context")
 
----
+
 
 ## Best Practices Summary
 
@@ -317,7 +317,7 @@ Answer: Billing policy changed to time-based pricing in 2023.
 | Labeling     | Use few-shot examples and explicit categories |
 | Diff Format  | Use V4A patch format for code updates         |
 
----
+
 
 ## Final Note
 
