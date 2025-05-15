@@ -1,4 +1,4 @@
-# [Chain of Thought and Planning](https://chatgpt.com/canvas/shared/6825f035f4b8819188e481e6e5cab29e)
+# [Chain of Thought and Planning in GPT-4.1](https://chatgpt.com/canvas/shared/6825f035f4b8819188e481e6e5cab29e)
 ## Overview
 
 This document serves as a comprehensive and standalone guide for implementing effective chain-of-thought prompting and planning techniques with the OpenAI GPT-4.1 model family. It draws from official prompt engineering strategies outlined in the OpenAI 4.1 Cookbook and translates them into an accessible, implementation-ready format for developers, researchers, and product engineers.
