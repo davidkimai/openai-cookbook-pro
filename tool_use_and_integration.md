@@ -6,7 +6,6 @@ GPT-4.1 introduces robust capabilities for working with tools directly through t
 
 This document offers a comprehensive guide for designing and deploying tool-augmented applications using GPT-4.1. It includes best practices for tool registration, prompting strategies, tool schema design, usage examples, and debugging common tool invocation failures. Each section is modular and designed to help you build reliable systems that scale across contexts, task types, and user interfaces.
 
----
 
 ## What is a Tool in GPT-4.1?
 
@@ -20,7 +19,6 @@ A **tool** is an explicitly defined function or utility passed to the GPT-4.1 AP
 
 Tools are defined in a structured JSON schema and passed via the `tools` parameter. When the model determines a tool is required, it emits a function call rather than plain text. This enables **precise execution**, **auditable behavior**, and **tight application integration**.
 
----
 
 ## Why Use Tools?
 
@@ -32,7 +30,6 @@ Tools are defined in a structured JSON schema and passed via the `tools` paramet
 | **Enhances compliance**        | Limits model responses to grounded tool outputs                            |
 | **Improves agent performance** | Required for persistent, multi-turn agentic workflows                      |
 
----
 
 ## Tool Definition: The Schema
 
@@ -69,7 +66,6 @@ Tools are defined using a JSON schema object that includes:
 * Minimize complexity: Use shallow parameter objects where possible
 * Use enums or constraints to reduce ambiguous calls
 
----
 
 ## Registering Tools in the API
 
@@ -90,7 +86,6 @@ Set `tool_choice` to:
 * A specific tool name: Force one call
 * `"none"`: Prevent tool usage (useful for testing)
 
----
 
 ## Prompting for Tool Use
 
@@ -117,7 +112,6 @@ If the tool fails to return the necessary data, ask the user for clarification.
 If the user cannot provide it, explain the limitation and pause further action.
 ```
 
----
 
 ## Tool Use in Agent Workflows
 
@@ -135,7 +129,6 @@ Tool usage is foundational to agent design in GPT-4.1.
 
 Each tool call is logged as a JSON event and can be parsed programmatically.
 
----
 
 ## Apply Patch: Recommended Format
 
@@ -162,7 +155,6 @@ EOF
 
 See `/examples/apply_patch/` for templates and error-handling techniques.
 
----
 
 ## Tool Examples by Use Case
 
@@ -174,7 +166,6 @@ See `/examples/apply_patch/` for templates and error-handling techniques.
 | Get user account data | `get_user_info` | Fetches user account info via phone number |
 | Log analytics         | `log_event`     | Sends metadata to your analytics platform  |
 
----
 
 ## Error Handling and Recovery
 
@@ -195,7 +186,6 @@ Only retry if the cause of failure is known and correctable.
 If not, explain the problem and ask the user for next steps.
 ```
 
----
 
 ## Tool Debugging and Logging
 
@@ -218,7 +208,6 @@ This creates full traceability for AI-involved actions.
 }
 ```
 
----
 
 ## Tool Evaluation and Performance Monitoring
 
@@ -231,7 +220,6 @@ Track tool usage metrics:
 
 Use this data to refine prompting and improve tool schema design.
 
----
 
 ## Common Pitfalls and Solutions
 
@@ -242,7 +230,6 @@ Use this data to refine prompting and improve tool schema design.
 | Repeated failed calls        | No failure mitigation logic                    | Add conditionals to check and respond to tool errors |
 | Model mixes tool names       | Ambiguous tool naming                          | Use short, specific, unambiguous names               |
 
----
 
 ## Combining Tools with Instructions
 
@@ -273,7 +260,6 @@ You are a bug-fix agent using provided tools to solve code issues.
 Include patch summaries, test outcomes, and current status.
 ```
 
----
 
 ## Tool Testing Templates
 
@@ -293,7 +279,6 @@ Use both synthetic and real examples:
 **Follow-up Behavior**: Retry with fixed patch
 ```
 
----
 
 ## Tool Choice Design
 
@@ -307,7 +292,6 @@ Choose between model-directed or developer-directed tool invocation:
 
 Choose based on control needs and task constraints.
 
----
 
 ## Summary: Best Practices for Tool Integration
 
@@ -320,7 +304,6 @@ Choose based on control needs and task constraints.
 | Schema Design    | Use JSON Schema with constraints to reduce invalid input |
 | Evaluation       | Track tool call success rate and contribution to outcome |
 
----
 
 ## Further Exploration
 
@@ -330,6 +313,5 @@ Choose based on control needs and task constraints.
 
 For community templates and tool libraries, explore the `/tools/` and `/examples/` directories in the main repository.
 
----
 
 For contributions, open a pull request or submit an issue in `/tools/Tool Use and Integration.md`.
