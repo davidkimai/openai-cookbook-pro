@@ -4,7 +4,6 @@
 
 This document provides a comprehensive implementation guide for code fixing and diff generation strategies using the OpenAI GPT-4.1 model. It is designed to help developers and tool builders harness the model’s improved agentic behavior, tool integration, and patch application capabilities. The guidance herein is based on OpenAI’s internal agentic workflows, as tested on SWE-bench Verified and related coding benchmarks.
 
----
 
 ## Objectives
 
@@ -13,7 +12,6 @@ This document provides a comprehensive implementation guide for code fixing and 
 * Leverage tool-calling strategies that minimize hallucination and improve precision
 * Scaffold workflows for validation, patch application, and iterative debugging
 
----
 
 ## Core Principles for Effective Bug Fixing
 
@@ -51,7 +49,6 @@ Prompt the model to:
 You MUST plan extensively before calling a function, and reflect thoroughly on its output before deciding your next step.
 ```
 
----
 
 ## Workflow Structure
 
@@ -83,7 +80,6 @@ Each of these phases should be scaffolded in the prompt or system instructions.
 6. Reflect and iterate.
 ```
 
----
 
 ## The V4A Patch Format (Recommended)
 
@@ -110,7 +106,6 @@ GPT-4.1 performs best with this clear, human-readable patch format:
 
 **Avoid line numbers**; GPT-4.1 does not rely on them. It uses code context instead.
 
----
 
 ## Tool Configuration: `apply_patch`
 
@@ -146,7 +141,6 @@ EOF
 
 The `apply_patch` tool accepts multi-file patches. Each file must be preceded by its action (`Add`, `Update`, or `Delete`).
 
----
 
 ## Testing Strategy
 
@@ -169,7 +163,6 @@ Did the test results indicate success? Were any edge cases missed? Do you need t
 * If tests fail, model should explain why and iterate
 * If tests pass, model should reflect before finalizing
 
----
 
 ## Debugging and Investigation Techniques
 
@@ -185,7 +178,6 @@ I will begin by reading the test file that triggered the error, then locate the 
 * Use tools to inspect contents before editing
 * Print debug output if necessary
 
----
 
 ## Failure Mode Mitigations
 
@@ -196,7 +188,6 @@ I will begin by reading the test file that triggered the error, then locate the 
 | Model ends before testing    | Insert reminder: "Do not conclude until all tests are validated."       |
 | Partial bug fixes            | Require model to re-verify against original issue and user expectations |
 
----
 
 ## Final Validation Phase
 
@@ -214,7 +205,6 @@ Before finalizing a solution, prompt the model to:
 Think about the original bug and the goal. Is your fix logically complete? Did you run all tests? Are hidden edge cases covered?
 ```
 
----
 
 ## Alternative Diff Formats
 
@@ -245,7 +235,6 @@ def broken():
 
 These are most useful in pipeline or IDE-integrated settings.
 
----
 
 ## Best Practices Summary
 
@@ -257,7 +246,6 @@ These are most useful in pipeline or IDE-integrated settings.
 | Testing                   | Prompt to test after every step                        |
 | Finalization              | Always include a validation + extra test writing phase |
 
----
 
 ## Conclusion
 
