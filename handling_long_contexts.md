@@ -11,7 +11,6 @@ This guide focuses on how to effectively structure, prompt, and manage long cont
 * Establish formatting and reasoning best practices that align with OpenAI’s tested strategies
 * Enable document processing, re-ranking, retrieval, and multi-hop reasoning across long inputs
 
----
 
 ## 1. Understanding Long Context Use Cases
 
@@ -25,7 +24,6 @@ GPT-4.1 is capable of processing up to 1 million tokens of input, making it suit
 
 While the model can technically parse vast inputs, developers must implement strategies to avoid cognitive overload and focus model attention effectively.
 
----
 
 ## 2. Context Organization Principles
 
@@ -50,7 +48,6 @@ To help the model parse structure in large blocks of text, delimiters must be us
 
 Markdown and XML structures yield better attention modeling across long contexts, while JSON often introduces parsing inefficiencies beyond a few thousand tokens.
 
----
 
 ## 3. Strategies for Long-Context Prompting
 
@@ -89,7 +86,6 @@ This promotes internal alignment without hardcoding logic into tool calls.
 After reading the next 5,000 tokens, summarize key entities mentioned and note unresolved questions. Then continue.
 ```
 
----
 
 ## 4. Long-Context Reasoning Patterns
 
@@ -125,7 +121,6 @@ For complex queries requiring synthesis from several different inputs:
 
 This scaffolds model behavior in a transparent and verifiable way.
 
----
 
 ## 5. Managing Instructional Interference
 
@@ -142,7 +137,6 @@ Example:
 **Reminder:** Focus only on logs mentioning `TimeoutError`. Ignore unrelated traces.
 ```
 
----
 
 ## 6. Failure Modes and Fixes
 
@@ -172,7 +166,6 @@ Pause and verify: Are we still on track based on the original query?
 * Summarize documents before passing into prompt.
 * Use a retrieval step to filter top-k relevant items.
 
----
 
 ## 7. Formatting Techniques for Long Contexts
 
@@ -197,7 +190,6 @@ This increases model ability to re-reference sections.
 
 This formatting supports multi-pass parsing and structured memory.
 
----
 
 ## 8. Alignment Between Internal and External Knowledge
 
@@ -217,7 +209,6 @@ When prompting, make mode explicit:
 Use only the following context. If insufficient, reply: "Insufficient data."
 ```
 
----
 
 ## 9. Tools and Token Budgeting
 
@@ -243,7 +234,6 @@ Encourage the model to use tools mid-way:
 
 Encouraging this tool interaction creates checkpoints and avoids reasoning drift.
 
----
 
 ## 10. Testing and Evaluation
 
@@ -261,7 +251,6 @@ When evaluating prompt effectiveness in long-context scenarios:
 
 Incorporate feedback loops to update prompts based on failure analysis.
 
----
 
 ## 11. Summary and Best Practices
 
@@ -275,7 +264,6 @@ Incorporate feedback loops to update prompts based on failure analysis.
 
 Effective long-context prompting is not about more data—it’s about better structure, thoughtful pacing, and precision anchoring.
 
----
 
 ## Final Notes
 
