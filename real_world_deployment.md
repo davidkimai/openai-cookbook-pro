@@ -6,7 +6,6 @@ This guide provides implementation-ready strategies for deploying GPT-4.1 in rea
 
 The focus is on reliability, agent autonomy, and system-level alignment for production use. This document emphasizes scenario-based implementation blueprints, including prompt structure, tool configuration, risk mitigation, and iterative deployment cycles.
 
----
 
 ## Objectives
 
@@ -15,7 +14,6 @@ The focus is on reliability, agent autonomy, and system-level alignment for prod
 * Codify best practices for tool integration, planning induction, and agent persistence
 * Support enterprise-grade use through modular scenario blueprints
 
----
 
 ## Deployment Pattern 1: Customer Service Agent
 
@@ -75,7 +73,6 @@ Hi, you've reached NewTelco. Let me retrieve that for you—one moment.
 | Tool skipping            | Require tool call before factual response |
 | Prohibited topic leakage | Reinforce restriction list + test in QA   |
 
----
 
 ## Deployment Pattern 2: Codebase Maintenance Agent
 
@@ -132,7 +129,6 @@ An agent responsible for identifying and fixing bugs using diffs, applying patch
 * Plan before every action
 * Reflect after test results
 
----
 
 ## Deployment Pattern 3: Long Document Analyst
 
@@ -166,7 +162,6 @@ A document triage and synthesis agent for use with 100k–1M token context windo
 * Ask model to pause and reflect: “Are we on track?”
 * Evaluate document relevance before synthesis
 
----
 
 ## Deployment Pattern 4: Data Labeling Assistant
 
@@ -200,7 +195,6 @@ Validate against schema on submit. Add real-time audit checks for consistency.
 * Flag outliers for review
 * Use `tool_call` to suggest schema fixes
 
----
 
 ## Deployment Pattern 5: Research Assistant
 
@@ -242,7 +236,6 @@ Use XML-structured context for each paper:
 ]
 ```
 
----
 
 ## Deployment Best Practices
 
@@ -271,7 +264,6 @@ Use XML-structured context for each paper:
 * Collect examples of failure modes
 * Adjust prompts, tools, and planning steps accordingly
 
----
 
 ## Summary
 
@@ -279,7 +271,6 @@ GPT-4.1 is deployable across a wide range of real-world systems. Success depends
 
 **Start with structured instructions. Plan agent actions. Validate at every step.**
 
----
 
 ## Additional Notes
 
