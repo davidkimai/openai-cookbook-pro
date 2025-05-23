@@ -12,7 +12,7 @@ This Cookbook Pro version encapsulates:
 * Tool-calling schemas and evaluation principles
 * Diff management and debugging strategies
 
-
+---
 
 ## Part I — Agentic Workflows
 
@@ -51,7 +51,7 @@ Fully resolve a software bug from an open-source issue.
 Only end the session when the problem is fully fixed and verified.
 ```
 
-
+---
 
 ## Part II — Instruction Following & Output Control
 
@@ -80,7 +80,7 @@ Use:
 Use: JSON with `title`, `answer`, `source` fields.
 ```
 
-
+---
 
 ## Part III — Tool Integration and Execution
 
@@ -111,7 +111,7 @@ Define tools via the `tools` API parameter, not inline prompt injection.
 * Validate inputs with required keys
 * Prompt model to message user before and after calls
 
-
+---
 
 ## Part IV — Planning and Chain-of-Thought Induction
 
@@ -131,12 +131,12 @@ Think step by step. Summarize relevant documents before answering.
 ### 4.2 Failure Mitigation Strategies
 
 | Problem           | Fix                                         |
-| -- | - |
+| ----------------- | ------------------------------------------- |
 | Early response    | Add: “Don’t conclude until fully resolved.” |
 | Tool guess        | Add: “Use tool or ask for missing data.”    |
 | CoT inconsistency | Prompt: “Summarize findings at each step.”  |
 
-
+---
 
 ## Part V — Long Context Optimization
 
@@ -148,7 +148,7 @@ Think step by step. Summarize relevant documents before answering.
 ### 5.2 Effective Delimiters
 
 | Type     | Example                 | Use Case           |                        |
-| -- | -- |  | - |
+| -------- | ----------------------- | ------------------ | ---------------------- |
 | Markdown | `## Section Title`      | General purpose    |                        |
 | XML      | `<doc id='1'>...</doc>` | Document ingestion |                        |
 | ID/Title | \`ID: 3                 | TITLE: ...\`       | Knowledge base parsing |
@@ -167,7 +167,7 @@ Use only documents provided. Reflect every 10K tokens.
 List all relevant IDs, then synthesize a summary.
 ```
 
-
+---
 
 ## Part VI — Diff Generation and Patch Application
 
@@ -209,19 +209,19 @@ List all relevant IDs, then synthesize a summary.
 ### 6.4 Edge Case Handling
 
 | Symptom             | Action                              |
-| - | -- |
+| ------------------- | ----------------------------------- |
 | Incorrect placement | Add `@@ def` or class scope headers |
 | Test failures       | Revise patch + rerun                |
 | Silent error        | Check for malformed format          |
 
-
+---
 
 ## Part VII — Output Evaluation Framework
 
 ### 7.1 Metrics to Track
 
 | Metric                     | Description                                          |
-| -- | - |
+| -------------------------- | ---------------------------------------------------- |
 | Tool Call Accuracy         | Valid input usage and correct function selection     |
 | Response Format Compliance | Matches expected schema (e.g., JSON)                 |
 | Instruction Adherence      | Follows rules and workflow order                     |
@@ -235,7 +235,7 @@ List all relevant IDs, then synthesize a summary.
 # Eval: OUTPUT_FORMAT_OK
 ```
 
-
+---
 
 ## Part VIII — Unified Prompt Template
 
@@ -267,7 +267,7 @@ Input: "..."
 Output: {...}
 ```
 
-
+---
 
 ## Final Notes
 
@@ -285,3 +285,4 @@ To deploy GPT-4.1 at professional scale:
 Welcome to Cookbook Pro.
 
 —End of Guide—
+
